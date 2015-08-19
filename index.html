@@ -11,24 +11,36 @@
 	<script src="js/app.js"></script>
 </head>
 <body>
-	<div class="app">
-		<div class="title-box">
+	<div class="background">
+		<div class="app">
+			<img class="watermark" src="img/hemingway-watermark.png" alt="hemingway watermark">
 			<h1 class="title">The Ernest Hemingway Quiz</h1>
+			<div class="question-box">
+				<h2 class="question">Where and when was Hemingway born?</h2>
+			</div>
+			<div class="answer-box">
+				<ul class="answers">
+					<li><input type="radio" name="answer-choice" value="Ketchum"> Ketchum, ID in 1905</li>
+					<li><input type="radio" name="answer-choice" value="Oak-Park"> Oak Park, IL in 1899</li>
+					<li><input type="radio" name="answer-choice" value="Havana"> Havana, Cuba in 1912</li>
+					<li><input type="radio" name="answer-choice" value="Chicago"> Chicago, IL in 1895</li>
+				</ul>
+			</div>
+			<div class="progress-box">
+				<ul class="progress">
+					<li class="submit"><button>SUBMIT?</button></li>
+					<li class="correct">1</li>
+					<li class="wrong">2</li>
+					<li class="current">3</li>
+					<li class="to-be-completed">4</li>
+					<li class="to-be-completed">5</li>
+				</ul>
+			</div>
+			<div class="quote-box">
+				<p class="quote">"Happiness in intelligent people is the rarest thing I know."</p>
+			</div>
 		</div>
-		<div class="question-box">
-			<h2 class="question">Where and when was Hemingway born?</h2>
-		</div>
-		<div class="answer-box">
-			<ul class="answers">
-				<li><input type="radio" name="answer-choice" value="Ketchum"> Ketchum, ID in 1905</li>
-				<li><input type="radio" name="answer-choice" value="Oak-Park"> Oak Park, IL in 1899</li>
-				<li><input type="radio" name="answer-choice" value="Havana"> Havana, Cuba in 1912</li>
-				<li><input type="radio" name="answer-choice" value="Chicago"> Chicago, IL in 1895</li>
-			</ul>
-		</div>
-		<div class="quote-box">
-			<p class="quote">"Happiness in intelligent people is the rarest thing I know."</p>
-		</div>
+		<img class="typewriter" src="img/typewriter.png" alt="typewriter">
 	</div>
 </body>
 </html>
