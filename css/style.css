@@ -173,10 +173,14 @@ button:hover {
 	background-color: #EDEAC6;
 }
 
-.progress button:hover {
+.progress .checkAnswer:hover {
 	cursor: pointer;
-	background-color: #BEBC9D;
-	color: #fff;
+	color: #9B3434;
+}
+
+.progress .nextQ:hover {
+	cursor: pointer;
+	color: #366531;
 }
 
 .quote-box {
