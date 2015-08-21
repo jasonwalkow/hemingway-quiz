@@ -3,6 +3,10 @@ body {
 	overflow: hidden;
 }
 
+button {
+	z-index: -1;
+}
+
 button:hover {
 	opacity: 0.7;
 	cursor: pointer;
@@ -52,7 +56,10 @@ button:hover {
 
 .app {
 	background-color: #EDEAC6;
-	background-image: url("img/hemingway-watermark.png");
+	background-image: url("../img/hemingway-watermark.png");
+	background-repeat: no-repeat;
+	background-size: 40%;
+	background-position: 50% 30%;
 	border-radius: 2px;
 	width: 60%;
 	height: 80%;
@@ -61,19 +68,6 @@ button:hover {
 	margin-top: 2%;
 	overflow: hidden;
 	text-align: center;
-	z-index: 97;
-}
-
-.watermark {
-	width: 25%;
-	position: absolute;
-	top: 0;
-	left: 0;
-	margin-left: 35%;
-	padding-left: -10%;
-	padding-right: 10%;
-	padding-top: 9%;
-	animation-timing-function: ease-in;
 }
 
 .title {
@@ -86,12 +80,11 @@ button:hover {
 
 .typewriter {
 	width: 80%;
-	margin-top: 28%;
+	margin-top: 40%;
 	margin-left: 9%;
 	margin-right: 10%;
 	top: 0;
 	position: absolute;
-	z-index: 100;
 }
 
 .wrong {
@@ -154,6 +147,7 @@ button:hover {
 
 .progress {
 	margin: 0;
+	z-index: -1;
 }
 
 .progress li {
@@ -186,7 +180,7 @@ button:hover {
 .quote-box {
 	text-align: center;
 	width: 95%;
-	margin-top: -1%;
+	margin-top: -3%;
 	margin-left: 3%;
 	margin-right: 5%;
 }

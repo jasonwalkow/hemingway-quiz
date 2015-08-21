@@ -36,9 +36,8 @@ $(document).ready(function() {
 	answer: 2, 
 	qNumber: 5,
 	quote: '"The world breaks everyone, and afterward, some are strong at the broken places."'},
-	];
 
-	
+	];
 
 	//Global Variables
 	var curQuestion = 1;
@@ -95,7 +94,12 @@ $(document).ready(function() {
 		curQuestion++;
 		questionIndex++;
 		$(".nextQ").hide();
+		$(".checkAnswer").show("fast");
 		getQuestion();
+	};
+
+	function showResults() {
+		$(".question").text("Congrats! You got " + score + " out of " + questions.length + " correct!");
 	};
 
 	//Check Answer function
@@ -111,25 +115,40 @@ $(document).ready(function() {
 		//Check that user selected a choice
 		if (radioValue === false) {
 			alert("Please select an answer");
+			return;
 		}
 
 		// If correct
-		else if (radioValue == questions[questionIndex].answer) {
+		var resultClass;
+		if (radioValue == questions[questionIndex].answer) {
 			// Apply correct class to number bubble
-			$(".to-be-completed[value=0]").removeClass("to-be-completed").addClass("correct");
+			resultClass = "correct";
 			score++;
-			$(".nextQ").show("fast");
-
+			
 		// If wrong
 		} else {
 			// Apply wrong class to number bubble
-			$(".to-be-completed[value=0]").removeClass("to-be-completed").addClass("wrong");
-			score++;
-			$(".nextQ").show("fast");
-		};
-	};
+			resultClass = "wrong";
+		} 
+
+		$(".to-be-completed[value=" + questionIndex + "]")
+			.removeClass("to-be-completed")
+			.addClass(resultClass);
+
+		
+		$(".nextQ").show("fast");
+		$(".checkAnswer").hide("fast");
+
+		if (questions.length === questionIndex + 1) {
+			$(".nextQ").hide();
+			$(".results").show("fast");
+		}
+	} 
+
 
 });
+
+
 
 
 
