@@ -47,17 +47,7 @@ $(document).ready(function() {
 	var counter = questions.length;
 
 	//Click Begin
-	$(".begin").click(function() {
-  		// 	hide introduction
-  		$(".intro-text").fadeOut("fast");
-  		$(".begin").fadeOut("fast");
-  		$(".nextQ").hide();
-  		$(".answer-box").show("slow");
-		$(".progress-box").show("slow");
-		$(".quote-box").show("slow");
-		$(".results").hide();
-		getQuestion();
-  	});
+	$(".begin").click(startGame);
 
 	//Starting Game
   	function startGame() {
@@ -66,7 +56,16 @@ $(document).ready(function() {
 		questionIndex = 0;
 		quoteIndex = 1;
 		$('input:radio[name=radio]').attr('checked',false);
-	  	getQuestion();
+	  	$(".intro-text").fadeOut("fast");
+  		$(".begin").fadeOut("fast");
+  		$(".nextQ").hide();
+  		$(".answer-box").show("slow");
+		$(".progress-box").show("slow");
+		$(".checkAnswer").show();
+		$(".quote-box").show("slow");
+		$(".results").hide();
+		$(".play-again").hide();
+		getQuestion();
  	};
 
  	//Get Question
@@ -99,12 +98,19 @@ $(document).ready(function() {
 		getQuestion();
 	};
 
-	//Get Results
- 	$(".results").click(showResults)
+	//Get Quiz Results
+ 	$(".results").click(showResults);
 
 	function showResults() {
-		$(".question").text("Congrats! You got " + score + " out of " + questions.length + " correct!");
+		$(".results").hide();
+		$(".play-again").show();
+		$(".answer-box").hide();
+		$(".question").text("That's it! You got " + score + " questions out of " + questions.length + " total questions correct! If you want to master The Ernest Hemingway Quiz, go ahead and play again!");
+		$(".quote").text('"The best way to find out if you can trust somebody is to trust them.”');
 	};
+
+	//Play Again
+ 	$(".play-again").click(startGame);
 
 	//Check Answer function
 	function checkAnswer() {
