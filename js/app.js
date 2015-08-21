@@ -55,6 +55,7 @@ $(document).ready(function() {
   		$(".answer-box").show("slow");
 		$(".progress-box").show("slow");
 		$(".quote-box").show("slow");
+		$(".results").hide();
 		getQuestion();
   	});
 
@@ -97,6 +98,9 @@ $(document).ready(function() {
 		$(".checkAnswer").show("fast");
 		getQuestion();
 	};
+
+	//Get Results
+ 	$(".results").click(showResults)
 
 	function showResults() {
 		$(".question").text("Congrats! You got " + score + " out of " + questions.length + " correct!");
