@@ -12,6 +12,16 @@ button:hover {
 	cursor: pointer;
 }
 
+button:focus {
+	outline:0;
+}
+
+label:hover {
+	color: #992929;
+	opacity: 0.8;
+	cursor: pointer;
+}
+
 .background {
 	background: url("../img/background-books.png") no-repeat center center fixed;
 	-webkit-background-size: cover;
@@ -52,6 +62,11 @@ button:hover {
 	z-index: 91;
 	margin-bottom: 5%;
 	margin-top: 3%;
+}
+
+.begin:hover {
+	color: #992929;
+	border-color: #992929;
 }
 
 .app {
@@ -105,7 +120,7 @@ button:hover {
 	height: 12%;
 	margin-left: 2%;
 	margin-right: 10%;
-	margin-top: -1%;
+	margin-top: 2%;
 	vertical-align: center;
 }
 
@@ -133,6 +148,10 @@ button:hover {
 	list-style: none;
 	padding:;
 	margin-bottom: 0.75rem;
+}
+
+.correctText {
+	color: #366531;
 }
 
 .progress-box {
@@ -169,12 +188,26 @@ button:hover {
 
 .progress .checkAnswer:hover {
 	cursor: pointer;
-	color: #9B3434;
+	color: #992929;
+	border-color: #992929;
 }
 
 .progress .nextQ:hover {
 	cursor: pointer;
 	color: #366531;
+	border-color: #366531;
+}
+
+.progress .results:hover {
+	cursor: pointer;
+	color: #366531;
+	border-color: #366531;
+}
+
+.progress .play-again:hover {
+	cursor: pointer;
+	color: #366531;
+	border-color: #366531;
 }
 
 .quote-box {

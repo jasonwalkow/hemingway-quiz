@@ -4,7 +4,6 @@ $(document).ready(function() {
 	$(".progress-box").hide();
 	$(".quote-box").hide();
 
-
 	//Questions
 	var questions = [
 	{quest: "Where and when was Hemingway born?",
@@ -19,7 +18,7 @@ $(document).ready(function() {
 	qNumber: 2,
 	quote: '"Happiness in intelligent people is the rarest thing I know."'},
 
-	{quest: "Hemingway once said that 'Courage is' what?",
+	{quest: 'Hemingway once said that "Courage is" what?',
 	choices: ['"fear evolved"', '"being sober early"', '"grace under pressure"', '"facing a lion"'],
 	answer: 3, 
 	qNumber: 3,
@@ -43,8 +42,6 @@ $(document).ready(function() {
 	var curQuestion = 1;
 	var questionIndex = 0;
 	var score = 0;
-	var counter = 0;
-	var counter = questions.length;
 
 	//Click Begin
 	$(".begin").click(startGame);
@@ -110,17 +107,21 @@ $(document).ready(function() {
 	};
 
 	//Play Again
- 	$(".play-again").click(startGame);
+ 	$(".play-again").click(function() {
+ 		startGame();
+ 		$(".wrong").removeClass("wrong").addClass("to-be-completed");
+ 		$(".correct").removeClass("correct").addClass("to-be-completed");
+ 	});
 
 	//Check Answer function
 	function checkAnswer() {
 		var radioValue = false;
-		var userChoice = document.getElementsByName('radio');
+		var userChoice = document.getElementsByName("radio");
 		for (var i = 0; i < userChoice.length; i++) {
 			if(userChoice[i].checked) {
 				radioValue = userChoice[i].value;
-			};
-		};
+			}
+		}
 
 		//Check that user selected a choice
 		if (radioValue === false) {
@@ -131,9 +132,9 @@ $(document).ready(function() {
 		// If correct
 		var resultClass;
 		if (radioValue == questions[questionIndex].answer) {
-			// Apply correct class to number bubble
-			resultClass = "correct";
+			// Apply correct class to number bubble and increase score
 			score++;
+			resultClass = "correct";
 			
 		// If wrong
 		} else {
@@ -154,7 +155,6 @@ $(document).ready(function() {
 			$(".results").show("fast");
 		}
 	} 
-
 
 });
 
