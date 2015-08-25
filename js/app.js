@@ -68,10 +68,10 @@ $(document).ready(function() {
  	//Get Question
  	function getQuestion() {
 	 	$(".question").text(questions[questionIndex].quest);
-	 	$("#choice0").text(questions[questionIndex].choices[0]);
-	 	$("#choice1").text(questions[questionIndex].choices[1]);
-	 	$("#choice2").text(questions[questionIndex].choices[2]);
-	 	$("#choice3").text(questions[questionIndex].choices[3]);
+	 	$("#choice1").text(questions[questionIndex].choices[0]);
+	 	$("#choice2").text(questions[questionIndex].choices[1]);
+	 	$("#choice3").text(questions[questionIndex].choices[2]);
+	 	$("#choice4").text(questions[questionIndex].choices[3]);
 	 	$(".quote").text(questions[questionIndex].quote);
  	};
 
@@ -82,7 +82,6 @@ $(document).ready(function() {
 
  	//Move to Next Question
  	$(".nextQ").click(function() {
- 		checkAnswer();
 		nextQuestion();
 		$('input:radio[name=radio]').attr('checked',false);
 	});
@@ -92,6 +91,7 @@ $(document).ready(function() {
 		questionIndex++;
 		$(".nextQ").hide();
 		$(".checkAnswer").show("fast");
+		$(".answers span").removeClass("correctText");
 		getQuestion();
 	};
 
@@ -140,6 +140,7 @@ $(document).ready(function() {
 		} else {
 			// Apply wrong class to number bubble
 			resultClass = "wrong";
+			$("#choice"+questions[questionIndex].answer).addClass("correctText");
 		} 
 
 		$(".to-be-completed[value=" + questionIndex + "]")
