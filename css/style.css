@@ -224,13 +224,13 @@ label:hover {
 
 /*==========  Media Queries  ==========*/
 
-/* Small Devices, Tablets */
-@media only screen and (max-width: 767px) {
+/* Small Devices, Tablets, Medium Devices */
+@media only screen and (max-device-width: 992px) {
 	.typewriter {
-		width: 80%;
+		width: 90%;
 		margin-top: 80%;
-		margin-left: 9%;
-		margin-right: 10%;
+		margin-left: 4%;
+		margin-right: 5%;
 		position: absolute;
 	}
 	.app {
@@ -238,18 +238,12 @@ label:hover {
 		background-position: 50% 30%;
 		border-radius: 2px;
 		width: 60%;
-		height: 60%;
-		margin-left: auto;
-		margin-right: auto;
-		margin-top: 20%;
-		overflow: hidden;
-		text-align: center;
+		height: 50%;
+		margin-top: 30%;
 	}
-}
-
-/* Medium Devices, Desktops */
-@media only screen and (min-width: 768px) and (max-width : 992px) {
-	
+	.answer-box {
+		margin-top: 0;
+	}
 }
 
 
