@@ -146,7 +146,6 @@ label:hover {
 	color: #484848;
 	font-size: 1.2rem;
 	list-style: none;
-	padding:;
 	margin-bottom: 0.75rem;
 }
 
@@ -243,6 +242,9 @@ label:hover {
 	}
 	.answer-box {
 		margin-top: 0;
+	}
+	.answers li {
+		font-size: 1.5rem;
 	}
 }
 
